@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safe Routes in Terrain Area</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='pathdetect.css') }}">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="main-box">
+            <div class="fullscreen-controls">
+                <button id="fullscreenBtn" class="icon-button" aria-label="Toggle fullscreen">
+                    <i data-lucide="maximize-2"></i>
+                </button>
+            </div>
+            <div class="map-area">
+                <h2>Map Visualization Area</h2>
+                <iframe id="map-iframe" src="" width="100%" height="500px" frameborder="0"></iframe>
+            </div>
+        </div>
+
+        <div class="navigation-buttons">
+            <button class="nav-button" onclick="highlightLayer('roads')">
+                <div class="button-with-loader">
+                    <i data-lucide="map"></i>
+                    <span>Routes</span>
+                    <div class="loader" id="routes-loader"></div>
+                </div>
+            </button>
+            <button class="nav-button" onclick="highlightLayer('trails')">
+                <div class="button-with-loader">
+                    <i data-lucide="mountain"></i>
+                    <span>Trails</span>
+                    <div class="loader" id="trails-loader"></div>
+                </div>
+            </button>
+            <button class="nav-button" onclick="highlightLayer('forests')">
+                <div class="button-with-loader">
+                    <i data-lucide="trees"></i>
+                    <span>Forest</span>
+                    <div class="loader" id="forests-loader"></div>
+                </div>
+            </button>
+            <button class="nav-button" onclick="highlightLayer('water_bodies')">
+                <div class="button-with-loader">
+                    <i data-lucide="droplets"></i>
+                    <span>Water Bodies</span>
+                    <div class="loader" id="water-bodies-loader"></div>
+                </div>
+            </button>
+            <button class="nav-button" onclick="highlightLayer('waterways')">
+                <div class="button-with-loader">
+                    <i data-lucide="waves"></i>
+                    <span>Waterway</span>
+                    <div class="loader" id="waterways-loader"></div>
+                </div>
+            </button>
+        </div>
+
+        <div class="control-buttons">
+            <!-- Previous Button -->
+            <button class="prev-btn" id="prevBtn">
+                <i data-lucide="arrow-left"></i>
+                <span>Previous</span>
+            </button>
+
+            <!-- Process Routes Button -->
+            <button class="process-btn" onclick="processRoutes()">
+                <div class="button-with-loader">
+                    <i data-lucide="play"></i>
+                    <span>Process Routes</span>
+                    <div class="loader" id="process-routes-loader"></div>
+                </div>
+            </button>
+
+            <!-- Next Button -->
+            <button class="next-btn" id="nextBtn">
+                <span>Next</span>
+                <i data-lucide="arrow-right"></i>
+            </button>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='pathdetect.js') }}"></script>
+</body>
+</html>

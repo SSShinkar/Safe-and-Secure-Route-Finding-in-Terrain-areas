@@ -1,1 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nashik Sentinel-2 Visualization</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        h1 {
+            color: #2c3e50;
+        }
+        h2 {
+            color: #34495e;
+        }
+        h3 {
+            color: #7f8c8d;
+        }
+        h4 {
+            color: #95a5a6;
+        }
+    </style>
+</head>
+<body>
 
+<h1>Nashik Sentinel-2 Visualization</h1>
+
+<p>This code utilizes the <strong>Geemap</strong> and <strong>Folium</strong> libraries to create an interactive web map focused on the Nashik region, showcasing Sentinel-2 Harmonized satellite imagery. Below are the main functionalities of the code:</p>
+
+<h2>Key Functionalities:</h2>
+<ol>
+    <li><strong>Earth Engine Authentication</strong>: Authenticates and initializes the Google Earth Engine (GEE) API.</li>
+    <li><strong>Defining Area of Interest</strong>: Defines a bounding box representing Nashik's geographical boundaries using the following coordinates:
+        <h3>Coordinates (with Directions):</h3>
+        <ul>
+            <li><strong>Southwest Corner:</strong> (20.4255° N, 73.9398° E)</li>
+            <li><strong>Northwest Corner:</strong> (20.5255° N, 73.9398° E)</li>
+            <li><strong>Northeast Corner:</strong> (20.5255° N, 74.0398° E)</li>
+            <li><strong>Southeast Corner:</strong> (20.4255° N, 74.0398° E)</li>
+        </ul>
+        <h4>Coordinates of Nashik Region:</h4>
+        <ul>
+            <li>Nashik City: (19.9975° N, 73.7898° E)</li>
+        </ul>
+    </li>
+    <li><strong>Creating an Interactive Map</strong>: Initializes a Folium map centered on Nashik with a predefined zoom level.</li>
+    <li><strong>Fetching Satellite Imagery</strong>: Fetches the Sentinel-2 Harmonized image collection based on date and location, sorted by cloud coverage.</li>
+    <li><strong>Visualization</strong>: Adds selected images to the map as tile layers with true color visualization parameters.</li>
+    <li><strong>Marker Integration</strong>: Places markers on the map for each coordinate, allowing users to see specific locations.</li>
+    <li><strong>Interactive Features</strong>: Includes search functionality and drawing tools for user interaction.</li>
+    <li><strong>Saving the Map</strong>: Saves the interactive map as an HTML file for web display.</li>
+</ol>
+
+<p>This code serves as a powerful tool for visualizing satellite data, enabling exploration and analysis of the Nashik region through a user-friendly interface.</p>
+
+</body>
+</html>

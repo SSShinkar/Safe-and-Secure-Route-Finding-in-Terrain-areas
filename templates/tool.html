@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/tool.css">
+    <title>Terrain Safe Route Finder</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="page-wrapper">
+        <header class="animate-slide-down">
+            <h1>Terrain Safe Route Finder</h1>
+            <p class="subtitle">Advanced AI-powered navigation for secure terrain path planning</p>
+        </header>
+        
+        <main>
+            <section class="form-section animate-fade-in">
+                <h2 class="section-title">Region Selection</h2>
+                <form id="coordinates-form" class="coordinate-form">
+                    <div class="coordinates-grid">
+                        <div class="input-group">
+                            <label for="longitude1">Longitude 1</label>
+                            <input type="text" id="longitude1" name="longitude1" required placeholder="e.g. 73.9398">
+                        </div>
+                        <div class="input-group">
+                            <label for="latitude1">Latitude 1</label>
+                            <input type="text" id="latitude1" name="latitude1" required placeholder="e.g. 20.4255">
+                        </div>
+                        <div class="input-group">
+                            <label for="longitude2">Longitude 2</label>
+                            <input type="text" id="longitude2" name="longitude2" required placeholder="e.g. 73.9398">
+                        </div>
+                        <div class="input-group">
+                            <label for="latitude2">Latitude 2</label>
+                            <input type="text" id="latitude2" name="latitude2" required placeholder="e.g. 20.5255">
+                        </div>
+                        <div class="input-group">
+                            <label for="longitude3">Longitude 3</label>
+                            <input type="text" id="longitude3" name="longitude3" required placeholder="e.g. 74.0398">
+                        </div>
+                        <div class="input-group">
+                            <label for="latitude3">Latitude 3</label>
+                            <input type="text" id="latitude3" name="latitude3" required placeholder="e.g. 20.5255">
+                        </div>
+                        <div class="input-group">
+                            <label for="longitude4">Longitude 4</label>
+                            <input type="text" id="longitude4" name="longitude4" required placeholder="e.g. 74.0398">
+                        </div>
+                        <div class="input-group">
+                            <label for="latitude4">Latitude 4</label>
+                            <input type="text" id="latitude4" name="latitude4" required placeholder="e.g. 20.4255">
+                        </div>
+                    </div>
+                    <div class="button-group">
+                        <button type="button" id="get-map-btn" class="submit-btn">
+                            <span class="btn-text">Generate Terrain Map</span>
+                            <div class="loader"></div>
+                        </button>
+                        <button type="button" id="next_app" class="next-btn">Next</button>
+                    </div>
+                </form>
+            </section>
+
+            <section class="map-section animate-fade-in">
+                <h2>Terrain Analysis</h2>
+                <div id="map-result-container" class="map-result-container"></div>
+                <p id="error-message" class="error-message"></p>
+                <button id="description-btn" class="description-btn" style="display: none;">View Detailed Analysis</button>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const token = urlParams.get('token');
+        if (token && !localStorage.getItem('token')) {
+            localStorage.setItem('token', token);
+        }
+    </script>
+    <script src="/static/tool.js"></script>
+</body>
+</html>

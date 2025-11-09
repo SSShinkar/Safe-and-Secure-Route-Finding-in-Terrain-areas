@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <link rel="stylesheet" href="../static/sign_in.css">
+</head>
+<body>
+    <!-- Snow animation container -->
+    <div class="snow-container"></div>
+    
+    <div class="container">
+        <div class="glass-morphism">
+            <h2>Sign In</h2>
+            <form class="auth-form" id="signin-form">
+                <div class="input-group">
+                    <label for="signin-email">Email</label>
+                    <input type="email" id="signin-email" name="email" placeholder="Enter your email" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="signin-password">Password</label>
+                    <input type="password" id="signin-password" name="password" placeholder="Enter your password" required>
+                </div>
+
+                <button type="submit" class="primary-btn" id="sign_in_button">
+                    <span>Sign In</span>
+                </button>
+            </form>
+            <p class="signup-link">Don't have an account? <a href="sign_up">Sign Up</a></p>
+        </div>
+    </div>
+    <script src="../static/sign_in.js"></script>
+</body>
+</html>

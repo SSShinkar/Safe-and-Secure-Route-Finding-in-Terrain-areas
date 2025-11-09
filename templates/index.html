@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terrain Navigation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo"><img src="static\image-Photoroom (1).png" alt="A beautiful view"></div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#Technology">Technology</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#Support">Support</a></li>
+            </ul>
+            <div class="auth-buttons">
+                <div id="user-profile" style="display: none;">
+                    <div class="profile-circle" id="profile-circle"></div>
+                    <div class="dropdown-content">
+                        <a href="/profile">
+                            <img src="../static/user.png" alt="Profile Icon" class="icon"> Profile
+                        </a>
+                        <a href="#" id="logoutOption">
+                            <img src="../static/logout.png" alt="Logout Icon" class="icon"> Logout
+                        </a>
+                    </div>
+                </div>
+                <button id="signUpBtn" style="display: none;">Sign Up</button>
+                <button id="signInBtn" class="sign-in-left" style="display: none;">Sign In</button>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <h1>Smart Path Finder</h1>
+        <button class="get-started">Get Started</button>
+    </section>
+
+    <!-- Main Content Container -->
+    <div class="main-content">
+        <!-- About Us Section -->
+        <section id="about" class="info-section">
+            <div class="box-content">
+                <h3>About Us</h3>
+                <p style="font-size:large; color: rgb(82, 79, 79);">Our system leverages satellite imagery 
+                    and Digital Elevation Models (DEMs) to analyze terrain and determine the safest, 
+                    most efficient routes. Using Machine Learning algorithms, it assesses slope, elevation, 
+                    and obstacles like rivers or cliffs to optimize navigation. Real-time weather updates 
+                    enable dynamic route adjustments, making it ideal for off-road travel and disaster response.</p><br>
+            </div>
+            <img src="{{ url_for('static', filename='aboutus.jpg') }}" alt="About Us" class="box-image">
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="info-section">
+            <img src="{{ url_for('static', filename='feature.jpg') }}" alt="Features" class="box-image">
+            <div class="box-content">
+                <h3>Features</h3>
+                <ul style="font-size:large; color: rgb(82, 79, 79);">
+                    <li>Interactive Terrain Visualization</li>
+                    <li>Existing Path Detection</li>
+                    <li>User-Friendly Interface</li>
+                    <li>Safety & Environmental Factor Analysis</li>
+                </ul><br>
+            </div>
+        </section>
+
+        <!-- Technology Section -->
+        <section id="Technology" class="info-section">
+            <div class="box-content">
+                <h3>Technologies</h3>
+                <ul style="font-size:large; color: rgb(82, 79, 79);">
+                    <li>Satellite Imagery Processing.</li>
+                    <li>Digital Elevation Models (DEM)</li>
+                    <li>Machine Learning</li>
+                    <li>Route Optimization Algorithms</li>
+                    <li>Real-Time Data Integration</li><br>
+                </ul>
+            </div>
+            <img src="{{ url_for('static', filename='technology.jpg') }}" alt="Technology" class="box-image">
+        </section>
+        <center>
+        <section id="contact" class="info-section">
+            <h3>Contact Us</h3>
+            <p style="font-size:large; color: rgb(82, 79, 79);">Email: support@terrainnav.com</p>
+        </section>
+        </center>
+    </div>
+
+    <!-- Logout Confirmation Popup -->
+    <div id="logoutPopup" class="popup">
+        <p>Are you sure you want to logout?</p>
+        <button id="confirmLogout">Yes, Logout</button>
+        <button id="cancelLogout">Cancel</button>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Terrain Nav. All rights reserved.</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

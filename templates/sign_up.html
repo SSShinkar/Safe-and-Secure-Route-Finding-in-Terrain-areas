@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='sign_up.css') }}">
+</head>
+<body>
+     <!-- Nature Background Elements -->
+     <div class="nature-bg">
+      <div class="leaf"></div>
+      <div class="leaf"></div>
+      <div class="leaf"></div>
+      <div class="leaf"></div>
+      <div class="leaf"></div>
+  </div>
+
+  <div class="container">
+      <div class="form-container">
+          <div class="logo-container">
+              <div class="logo">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="user-plus">
+                      <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                      <circle cx="9" cy="7" r="4"></circle>
+                      <line x1="19" y1="8" x2="19" y2="14"></line>
+                      <line x1="22" y1="11" x2="16" y2="11"></line>
+                  </svg>
+              </div>
+          </div>
+          
+          <h2>Sign Up</h2>
+          
+          <form action="/sign_up" method="post" class="auth-form" id="signup-form">
+              <div class="input-group">
+                  <div class="input-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                          <polyline points="22,6 12,13 2,6"></polyline>
+                      </svg>
+                  </div>
+                  <input type="email" id="signup-email" name="email" placeholder="Enter your email" required>
+              </div>
+
+              <div class="input-group">
+                  <div class="input-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                          <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                      </svg>
+                  </div>
+                  <input type="password" id="signup-password" name="password" placeholder="Enter your password" required>
+              </div>
+
+              <div class="input-group">
+                  <div class="input-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                          <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                      </svg>
+                  </div>
+                  <input type="password" id="confirm-password" name="confirm_password" placeholder="Confirm your password" required>
+              </div>
+
+              <button type="submit" class="primary-btn">
+                  Sign Up
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="arrow-icon">
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+              </button>
+          </form>
+
+          <p class="sign-in-link">Already have an account? <a href="/sign_in">Sign In</a></p>
+
+          <div class="messages">
+              {% with messages = get_flashed_messages(with_categories=True) %}
+                  {% if messages %}
+                      <ul>
+                      {% for category, message in messages %}
+                          <li class="{{ category }}">{{ message }}</li>
+                      {% endfor %}
+                      </ul>
+                  {% endif %}
+              {% endwith %}
+          </div>
+      </div>
+  </div>
+    <script src="{{ url_for('static', filename='signup.js') }}"></script>
+</body>
+</html>
