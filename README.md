@@ -1,2 +1,3 @@
-# Safe-and-Secure-Route-Finding-in-Terrain-areas
-This project builds a satellite-based route finder using high-resolution imagery and DEMs to analyze terrain and determine safe, efficient paths. It factors in slope, elevation, and obstacles, adapting routes with real-time weather for safer navigation in rough or disaster-prone areas.
+# Safe And Secure Route Finding In Terrain Area | ML Algorithms, High-resolution satellite imagery, Digital Elevation Models (DEM).
+• Developed an optimal route-finding system using High-resolution satellite imagery and Digital Elevation Models (DEMs) to analyse rough terrains, incorporating terrain classification for better off-road navigation.
+• Designed algorithms to compute safe and efficient routes by considering slope, elevation, obstacles, and real-time  weather data, enhancing dynamic route adjustments and disaster response capabilities.
